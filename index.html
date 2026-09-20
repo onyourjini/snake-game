@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Snake</h1>
+    <div class="scores">
+        <span>Score <strong id="score">0</strong></span>
+        <span>Best Score <strong id="best">0</strong></span>
+    </div>
+
+    <canvs id="board" width="400" height="400"></canvs>
+
+
+    <div class="controls">
+        <button class="chip" id="pauseBtn">Pause</button>
+        <button class="chip" id="soundBtn">Sound On</button>
+    </div>
+
+    <details>
+        <summary>Setting</summary>
+        <div class="group">
+            <div class="group-title">Map Size</div>
+            <div class="chips">
+                <button class="chip" data-size="small">Small</button>
+                <button class="chip" data-size="normal">Normal</button>
+                <button class="chip" data-size="large">Large</button>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="group-title">Color</div>
+            <div class="chips">
+                <button class="chip" data-theme="night">Night</button>
+                <button class="chip" data-theme="pink">Pink</button>
+                <button class="chip" data-theme="forest">Forest</button>
+                <button class="chip" data-theme="christmas">Christmas</button>
+            </div>
+        </div>
+    </details>
+
+    <div class="pad">
+        <button data-dir="up" aria-label="Up">△</button>
+        <button data-dir="left" aria-label="Left">◁</button>
+        <button data-dir="down" aria-label="Down">▽</button>
+        <button data-dir="right" aria-label="Right">▷</button>
+    </div>
+
+    <p class="hint">Use Arrow Key, WASD, Swipe, or Button to control the game</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
