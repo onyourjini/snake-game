@@ -1,0 +1,94 @@
+:root {
+    --bg: #141b2d;
+    --board: #1c2640;
+    --text: #e8edf7;
+    --muted: #9aa5c2;
+    --button: #26325a;
+    --button-active: #3a4a80;
+}
+
+* { box-sizing: border-box;}
+
+html { min-height: 100% }
+
+body {
+    min-height: 100dvh;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: calc(16px + env(safe-area-inset-top,  0px)) 12px cals(16px + env(safe-area-inset-buttom, 0px));
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+h1 { margin: 0; font-size: 1.4rem; }
+
+.scores {
+    display: flex;
+    gap: 24px;
+    font-size: 1rem;
+    color: var(--muted);
+}
+.scores strong { color: var(--text); font-size: 1.2rem; }
+
+canvas {
+    width: min(92vw, 400px);
+    height: auto;
+    aspect-ratio: 1;
+    background: var(--board);
+    border-radius: 12px;
+    touch-action: none;
+}
+
+.controls { display: flex; gap: 8px; }
+
+details {
+    width: min(92vw, 400px);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 10px 14px;
+}
+
+summary { cursor: pointer; color: var(--muted); }
+.group { margin-top: 12px; }
+.group-title { font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+    border: none;
+    border-radius: 999px;
+    background: var(--button);
+    color: var(--text);
+    padding: 8px 14px;
+    font-size: 0.9rem;
+}
+.chip.active { background: var(--text); color: var(--bg); font-weight: 700; }
+
+.pad {
+    display: grid;
+    grid-template-columns: repeat(3, 64px);
+    grid-template-rows: repeat(2, 64px);
+    gap: 8px
+}
+.pad button {
+    border: none;
+    border-radius: 14px;
+    background: var(--button);
+    color: var(--text);
+    font-size: 1.5rem;
+}
+.pad button:active { background: var(--button-active); }
+.pad [data-dir="up"]    { grid-column: 2; grid-row: 1; }
+.pad [data-dir="left"]  { grid-column: 1; grid-row: 2; }
+.pad [data-dir="down"]  { grid-column: 2; grid-row: 2; }
+.pad [data-dir="right"]  { grid-column: 3; grid-row: 2; }
+
+.hint { margin: 0; font-size: 0.85rem; color: var(--muted); text-align: center; }
+
+/* 29 min */
