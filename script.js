@@ -189,8 +189,6 @@ function stopMusic() {
     bgm.pause();
 }
 
-// 1hr
-
 function start() {
     if (running) return;
     const resuming = paused;
@@ -419,7 +417,3 @@ bestEl.textContent = best;
 reset();
 applyTheme(settings.theme);
 refreshChips();
-
-// 1:42 hr -- finish
-// 1: 55 hr -- fix error
-
